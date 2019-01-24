@@ -1,0 +1,23 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn build && node dist/main.js",
+    "build:production": "webpack --mode=production && nexe dist/main.js -t linux-x64-10.15.0 -o dist/linux && nexe dist/main.js -t mac-x64-10.15.0 -o dist/mac && nexe dist/main.js -t windows-x64-10.15.0 -o dist/windows.exe",
+    "build": "webpack --mode=development"
+  },
+  "dependencies": {
+    "await-to-js": "^2.1.1",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-async-to-generator": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/runtime": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "nexe": "^2.0.0-rc.34",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  }
+}
