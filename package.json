@@ -2,7 +2,10 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn build && node dist/main.js",
-    "build:production": "webpack --mode=production && nexe dist/main.js -t linux-x64-10.15.0 -o dist/linux && nexe dist/main.js -t mac-x64-10.15.0 -o dist/mac && nexe dist/main.js -t windows-x64-10.15.0 -o dist/windows.exe",
+    "build:production": "webpack --mode=production",
+    "build:mac": "nexe dist/main.js -t mac-x64-10.15.0 -o dist/mac",
+    "build:linux": "nexe dist/main.js -t linux-x64-10.15.0 -o dist/linux",
+    "build:windows": "nexe dist/main.js -t windows-x64-10.15.0 -o dist/windows.exe",
     "build": "webpack --mode=development"
   },
   "dependencies": {

@@ -1,0 +1,12 @@
+language: node_js
+before_install:
+  - yarn
+
+jobs:
+  include:
+    - stage: build
+      script: yarn build:production
+    - stage: package
+      script: yarn build:mac
+      script: yarn build:linux
+      script: yarn build:windows
