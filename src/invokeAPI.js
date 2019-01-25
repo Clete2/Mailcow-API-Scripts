@@ -27,7 +27,7 @@ const invokeAPI = async (method, type, filterFunction = () => true) => {
     throw new Error(errorMessage);
   }
 
-  return json.filter(filterFunction);
+  return json !== null && json.length > 0 ? json.filter(filterFunction) : json;
 };
 
 export default invokeAPI;
