@@ -5,10 +5,7 @@ node_js:
 jobs:
   include:
     - stage: build
-      script: yarn build:production
-      script: yarn build:mac
-      script: yarn build:linux
-      script: yarn build:windows
+      script: yarn build:production && yarn build:mac && yarn build:linux && yarn build:windows
       deploy:
         provider: releases
         api_key: "GITHUB OAUTH TOKEN"
