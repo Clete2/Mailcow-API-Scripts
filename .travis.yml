@@ -6,7 +6,15 @@ jobs:
   include:
     - stage: build
       script: yarn build:production
-    - stage: package
       script: yarn build:mac
       script: yarn build:linux
       script: yarn build:windows
+      deploy:
+        provider: releases
+        api_key: "GITHUB OAUTH TOKEN"
+        file: "dist/linux"
+        skip_cleanup: true
+        on:
+          tags: true
+
+cache: yarn
