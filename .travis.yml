@@ -1,17 +1,22 @@
 language: node_js
 node_js:
-  - "node"
-
+- node
 jobs:
   include:
-    - stage: build
-      script: yarn build:production && yarn build:mac && yarn build:linux && yarn build:windows
-      deploy:
-        provider: releases
-        api_key: "GITHUB OAUTH TOKEN"
-        file: "dist/linux"
-        skip_cleanup: true
-        on:
-          tags: true
+  - stage: build
+    script: yarn build:production && yarn build:mac && yarn build:linux && yarn build:windows
 
+deploy:
+  provider: releases
+  api_key:
+    secure: og+H9UoMsfBTtPpFilxyEGW0D5/ta1kA0/VadXyW4UjCbuOfKsi8+1+CjaI/bWMg6U2GneHN8DNQhI4vxOwyEe7G/sGegJL9JsjI5mL+xif7D7fJcHorQLBWgvOZ1TSp2zx9lPkL7qeFrrnC5k9QW2mHtEnInd4Rw+pOktP9NE1bVLr6ru0H68Igl/ZI5j8TDTIqGfpFB1lTHxjHeu/DJBnqeQ/ucLVEMp9ri8Cae7IoDGrPoep0TcAUFADsJgruGIwXEssy2RToVmR6Uag8xe/fu9HEFnXZ7ywGCvPy+y4um80c8rvxe1SsxNvGS6dLZPVvoa9T91bwoRWXcR82WA4OA6r3MvchVqXvB2c5kQiW4tJDe1wxUCndDKcn5b9Bdwa2zhMmmWxvHF/RQQKDO2Os6VsOnPn9fhPJq/a13yKxjMBb6NvzZpSo7xGueii71F+jQcN2z2cexz63ZpEImgyWHVK9iDM83zIJQdVL/DC7wqY3IEC3w2yGm61NTjYJ8f+RDD83nFjgFv5m05LqsvqEfEmZ+IXXJkkb0mH9hkBVqY7srCoIN2LZuIOnsd+Q7l2ikh2mr0PzuI7eTdFWrt6Eon8H3guz7RSLr1XZWBsILHIrgcoozwxZVBJEgtZAhK0ubNBk4UjD+oVykzG7ZOxdiZHM0BrxZlPqLPwH3Y0=
+  file:
+  - dist/linux
+  - dist/mac
+  - dist/main.js
+  - dist/windows.exe
+  skip_cleanup: true
+  on:
+    tags: true
+    
 cache: yarn
