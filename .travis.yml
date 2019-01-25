@@ -5,18 +5,15 @@ jobs:
   include:
   - stage: build
     script: yarn build:production && yarn build:mac && yarn build:linux && yarn build:windows
-
 deploy:
   provider: releases
   api_key:
-    secure: og+H9UoMsfBTtPpFilxyEGW0D5/ta1kA0/VadXyW4UjCbuOfKsi8+1+CjaI/bWMg6U2GneHN8DNQhI4vxOwyEe7G/sGegJL9JsjI5mL+xif7D7fJcHorQLBWgvOZ1TSp2zx9lPkL7qeFrrnC5k9QW2mHtEnInd4Rw+pOktP9NE1bVLr6ru0H68Igl/ZI5j8TDTIqGfpFB1lTHxjHeu/DJBnqeQ/ucLVEMp9ri8Cae7IoDGrPoep0TcAUFADsJgruGIwXEssy2RToVmR6Uag8xe/fu9HEFnXZ7ywGCvPy+y4um80c8rvxe1SsxNvGS6dLZPVvoa9T91bwoRWXcR82WA4OA6r3MvchVqXvB2c5kQiW4tJDe1wxUCndDKcn5b9Bdwa2zhMmmWxvHF/RQQKDO2Os6VsOnPn9fhPJq/a13yKxjMBb6NvzZpSo7xGueii71F+jQcN2z2cexz63ZpEImgyWHVK9iDM83zIJQdVL/DC7wqY3IEC3w2yGm61NTjYJ8f+RDD83nFjgFv5m05LqsvqEfEmZ+IXXJkkb0mH9hkBVqY7srCoIN2LZuIOnsd+Q7l2ikh2mr0PzuI7eTdFWrt6Eon8H3guz7RSLr1XZWBsILHIrgcoozwxZVBJEgtZAhK0ubNBk4UjD+oVykzG7ZOxdiZHM0BrxZlPqLPwH3Y0=
+    secure: BxyIv6Y66q8AyT6+qoYpe2b1TTXawNFu5a+Kj1cVPS9x5/MTNXz62+Xap8BdLEkxeMEEun7/Bcx8P/B1t2i8sE0AREz1xdZI7X/2yFWbPa6DHBPBoYSL2N1OTXOn9RbN92qJX7d4mnTXkhRCdr3KrwUrULfUuy+5SN7B76wpE8VKDqKk3Q+6aITvR+jJxuEeQwyJTuwpQSlMs/qQ4Oogb/izFEMD0ZpV+GMuxUrVlzHej7s/eR2g+qxwJu2hAwcnnqCicEZWCxFhNfgXOP20/I21u7mxFoNz4kuRXikqtxaOLMCV29zKTO8DY7vnug2ATdbyEknBYVQdY6RTJK8XTvTQQclOMl4AnYC8OFIBhf+UPAOxq0fkzyg05UDBbdT+jPBHFkv+QJz0UuDajzaSeAJGNulrHgyHsOA5VU5hRj7JK81t00deDtrqqFZRJlv6Wav3uCQ5GtOTr8R3btkxQrbZglSbQrXGAB1PouAs4IMLTdzwJiG8RspPWJ9vbSMHnvwNi4d6IJDvkFdN081Q5FlZAh6ILPAoGkkv7DhH/ZeLZ+t/PjX/c+oDn6a9gfREvWJVyLNZw/AVVs/IIB52yN87WUoFEMFiPwt2c6ZN7I7ycu41nBXSvcKEotLhVi1xJp+8eXRWOUFaC2TdKdcdYq+RdLA68X1TJIj//rKEXks=
   file:
   - dist/linux
   - dist/mac
   - dist/main.js
   - dist/windows.exe
-  skip_cleanup: true
   on:
-    tags: true
-    
+    repo: Clete2/Mailcow-API-Scripts
 cache: yarn

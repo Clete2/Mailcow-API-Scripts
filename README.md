@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Clete2/Mailcow-API-Scripts.svg?branch=master)](https://travis-ci.com/Clete2/Mailcow-API-Scripts)
+
 # Overview
 Scripts that will execute the Mailcow API and return useful results. The scripts are designed to be used with a monitoring solution. Thus, they will be silent if there is nothing to report.
 
