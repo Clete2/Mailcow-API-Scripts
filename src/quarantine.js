@@ -11,6 +11,7 @@ const getQueue = async () => {
 
   if (result.length > 0) {
     console.error(`Messages are sitting in quarantine!\n${JSON.stringify(result, null, 2)}`);
+    return true;
   }
 };
 
