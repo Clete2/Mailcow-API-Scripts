@@ -16,7 +16,5 @@ deploy:
   - dist/windows.exe
   on:
     repo: Clete2/Mailcow-API-Scripts
-  branches:
-    only:
-      - master
+    condition: true
 cache: yarn
