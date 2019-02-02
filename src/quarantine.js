@@ -1,7 +1,7 @@
 import to from 'await-to-js';
 import invokeAPI from './invokeAPI';
 
-const getQueue = async () => {
+export default async () => {
   const [error, result] = await to(invokeAPI('get/mailq/all', 'quarantine'));
 
   if (error) {
@@ -10,9 +10,8 @@ const getQueue = async () => {
   }
 
   if (result.length > 0) {
-    console.error(`Messages are sitting in quarantine!\n${JSON.stringify(result, null, 2)}`);
-    return true;
+    const message = `Messages are sitting in quarantine!\n${JSON.stringify(result, null, 2)}`;
+    console.error(message);
+    throw new Error(message);
   }
 };
-
-export default getQueue;
